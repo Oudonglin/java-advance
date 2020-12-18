@@ -11,4 +11,7 @@ public class AdvancedApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AdvancedApplication.class, args);
 	}
+	public void test(){
+		System.out.println("hello");
+	}
 }
