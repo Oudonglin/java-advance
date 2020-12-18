@@ -1,5 +1,8 @@
-package com.doney.advanced;
+package com.doney.advanced.thread;
 
+/**
+ * 线程优先级测试
+ */
 public class YieldTest extends Thread {
  
 	public YieldTest(String name) {

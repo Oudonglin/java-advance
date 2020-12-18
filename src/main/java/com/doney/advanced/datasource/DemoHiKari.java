@@ -1,8 +1,11 @@
-package com.doney.advanced;
+package com.doney.advanced.datasource;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+/**
+ * Hikari 数据库
+ */
 public class DemoHiKari {
     public static void main(String[] args) {
         HikariConfig config = new HikariConfig();
@@ -14,7 +17,6 @@ public class DemoHiKari {
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
         HikariDataSource ds = new HikariDataSource(config);
-
-
+        System.out.println(ds);
     }
 }
