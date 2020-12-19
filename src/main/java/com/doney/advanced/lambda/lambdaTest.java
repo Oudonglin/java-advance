@@ -11,24 +11,16 @@ public class lambdaTest {
 
     public static void main(String[] args) {
         AtomicReference<String> a = new AtomicReference<>("");
+        String b = "";//Variable used in lambda expression should be final or effectively final
+        //lambda表达式中使用的变量应该是final或有效的final
         new Thread(
                 ()->{
                     while (true) {
                         a.set(UUID.randomUUID().toString());
+                        // b="123";
                     }
                 }
         ).start();
-        new Thread(
-                ()->{
-                    while (true) {
-                        System.out.println(a.get());
-                    }
-                }
-        ).start();
-        while (true) {
-            a.set(UUID.randomUUID().toString());
-            System.out.println(2);
-        }
 
     }
 

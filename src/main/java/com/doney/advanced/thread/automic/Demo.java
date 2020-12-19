@@ -1,6 +1,7 @@
 package com.doney.advanced.thread.automic;
 
 import java.util.concurrent.atomic.*;
+import java.util.function.IntBinaryOperator;
 
 /**
  * JDk 提供的原子操作
@@ -50,7 +51,8 @@ public class Demo {
 
     /**
      * 高级的并行计算器
-     * 性能高于  @See accumulateAndGet(int x,IntBinaryOperator accumulatorFunction)
+     * 性能高于
+     *@see  AtomicInteger#accumulateAndGet(int, IntBinaryOperator)
      */
     private static void Accumulator() throws InterruptedException {
         LongAccumulator longAccumulator = new LongAccumulator((a, b) -> {
@@ -68,8 +70,8 @@ public class Demo {
 
     /**
      * 累加器
-     * 性能高于   AtomicInteger.incrementAndGet()
-     * @throws InterruptedException
+     * 性能高于
+     * @see AtomicInteger#incrementAndGet()
      */
     private static void Longadder() throws InterruptedException {
         LongAdder longAdder = new LongAdder();
